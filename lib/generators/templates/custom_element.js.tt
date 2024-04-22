@@ -1,0 +1,9 @@
+export default class extends HTMLElement {
+  constructor() {
+    super()
+  }
+
+  connectedCallback() {
+    console.log("<%= file_name %>")
+  }
+}
