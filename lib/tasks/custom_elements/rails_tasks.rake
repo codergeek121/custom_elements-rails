@@ -1,4 +1,7 @@
-# desc "Explaining what the task does"
-# task :custom_elements_rails do
-#   # Task goes here
-# end
+namespace :custom_elements do
+  desc "Installation"
+  task :install do
+    puts "Installing custom_elements-rails"
+    system "rails app:template LOCATION=#{File.expand_path('../../install/install.rb', __dir__)}"
+  end
+end

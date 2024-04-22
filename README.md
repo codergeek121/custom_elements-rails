@@ -1,8 +1,8 @@
-# CustomElements::Rails
-Short description and motivation.
+# Custom Elements with Rails
+
+This gem provides a small helper and installation scripts to use custom elements in conjunction with `importmap-rails`.
 
 ## Usage
-How to use my plugin.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -11,15 +11,33 @@ Add this line to your application's Gemfile:
 gem "custom_elements-rails"
 ```
 
-And then execute:
+Install the gem:
+
 ```bash
-$ bundle
+$ bundle install
 ```
 
-Or install it yourself as:
+Run the initial setup:
+
 ```bash
-$ gem install custom_elements-rails
+$ rails custom_elements:install
 ```
+
+This will setup and add the following files:
+
+```
+app/javascript
+├── application.js
+└── custom_elements
+    ├── hello_element.js
+    └── index.js
+```
+
+You can now add the `<app-hello>` custom element in your app. No build step needed.
+
+## Add a custom element
+
+TODO
 
 ## Contributing
 Contribution directions go here.

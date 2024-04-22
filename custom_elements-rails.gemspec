@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Niklas Häusele"]
   spec.email       = ["niklas.haeusele@hey.com"]
   spec.homepage    = "https://github.com/codergeek121/custom_elements-rails"
-  spec.summary     = "custom elements + Rails = 🎉"
-  spec.description = "A simple way to use custom elements and importmaps"
+  spec.summary     = "Custom Elements + Rails + Importmaps = 🎉"
+  spec.description = "A simple way to use custom elements to your Rails app. #nobuild"
   spec.license     = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -19,6 +19,5 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  # TODO
-  spec.add_dependency "rails", ">= 7.1.3.2"
+  spec.add_dependency "rails", ">= 7"
 end
