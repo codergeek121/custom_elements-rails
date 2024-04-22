@@ -1,6 +1,6 @@
 # Custom Elements with Rails
 
-This gem provides a small js-helper, installation and generators to use custom elements in conjunction with `importmap-rails`.
+This gem provides a small js-helper, installation and generators to use custom elements in conjunction with `importmap-rails` gem.
 
 ## Usage
 
@@ -23,7 +23,7 @@ Run the initial setup:
 $ rails custom_elements:install
 ```
 
-This will setup and add the following files:
+This will setup and edit add the following files:
 
 ```
 app/javascript
@@ -37,16 +37,17 @@ You can now add the `<app-hello>` custom element in your HTML. No build step nee
 
 ## How it works
 
-`eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" })` will parse the JSON-importmap rendered by the `importmap-rails` gem and register custom elements with `customElements.define(...)` to the browser's custom element registry.
+`eagerDefineCustomElementsFrom` will parse the JSON-importmap rendered by the `importmap-rails` gem.
+It registers custom elements with `customElements.define(...)` to the browser's custom element registry based on the filename automatically.
 
 ```
 custom_elements/hello_element.js // will register <app-hello>
 ```
 
-Your `_element.js` files have to `export default` custom elements for this to work.
+Your `*_element.js` files have to `export default` custom elements for this to work properly.
 
 > [!WARNING]  
-> Only single word elements are support currently.
+> Only single word elements are supported currently. See https://github.com/codergeek121/custom_elements-rails/issues/1
 
 
 ## Add a custom element
