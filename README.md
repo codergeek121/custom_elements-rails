@@ -1,5 +1,7 @@
 # Custom Elements with Rails
 
+[![Tests](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml)
+
 This gem provides a small js-helper, installation scripts and generators to use custom elements in conjunction with the `importmap-rails` gem.
 
 ## Usage
