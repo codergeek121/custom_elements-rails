@@ -62,7 +62,7 @@ $ rails generate custom_element test
 
 This will generate 
 
-```
+```javascript
 // app/javascript/custom_elements/test_element.js
 export default class extends HTMLElement {
   constructor() {
