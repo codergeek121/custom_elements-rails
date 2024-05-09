@@ -1,4 +1,7 @@
 export default class extends HTMLElement {
+<% if attributes.any? %>
+  static observedAttributes = <%= attributes.map { _1.name } %>
+<% end %>
   constructor() {
     super()
   }
@@ -6,4 +9,10 @@ export default class extends HTMLElement {
   connectedCallback() {
     console.log("<%= file_name %>")
   }
+<% attributes.each do |attribute| -%>
+
+  get <%= attribute.name %>() {
+    return this.getAttribute("<%= attribute.name %>")
+  }
+<% end -%>
 }
