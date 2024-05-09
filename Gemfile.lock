@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    custom_elements-rails (0.1.2)
+    custom_elements-rails (0.2.0)
       rails (>= 7.0.0)
 
 GEM
