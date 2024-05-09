@@ -52,7 +52,7 @@ Your `*_element.js` files have to `export default` custom elements for this to w
 > [!WARNING]  
 > Only single word elements are supported currently. See https://github.com/codergeek121/custom_elements-rails/issues/1
 
-## Add a custom element
+## Add a custom element with the built-in generator
 
 This gem adds a generator to generate new custom elements with:
 
@@ -73,10 +73,39 @@ export default class extends HTMLElement {
     console.log("test_element.js")
   }
 }
-
 ```
 
 which in turn will register a `<app-test></app-test>` custom element automatically in your app.
+
+```bash
+$ rails generate custom_element test 
+```
+
+To observe changes in your custom element's attributes, you need to set a static array of attribute names. The generator also supports setting those automatically:
+
+```bash
+$ rails generate custom_element test attribute1
+```
+
+will generate
+
+```javascript
+export default class extends HTMLElement {
+  static observedAttributes = ["attribute1"]
+
+  constructor() {
+    super()
+  }
+
+  connectedCallback() {
+    console.log("test_element.js")
+  }
+
+  get attribute1() {
+    return this.getAttribute("attribute1")
+  }
+}
+```
 
 ## Documentation
 
