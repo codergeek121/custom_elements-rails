@@ -49,8 +49,33 @@ custom_elements/hello_element.js // will register <app-hello> automatically
 
 Your `*_element.js` files have to `export default` custom elements for this to work properly.
 
-> [!WARNING]  
-> Only single word elements are supported currently. See https://github.com/codergeek121/custom_elements-rails/issues/1
+### Naming Convention for Custom Elements
+
+When defining custom elements from files, their filenames are used to generate the element names automatically. The following rules and examples clarify how file paths are converted to custom element names:
+
+#### Usage
+
+Register all files in the `custom_elements` folder as custom elements using a prefix (e.g., `app`):
+
+```js
+eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
+```
+
+#### Conversion Rules
+
+- Filenames are transformed into kebab-case (lowercase with hyphens).
+- Words are separated by underscores (`_`) or hyphens (`-`) in the filename.
+- The folder structure is reflected in the name using double hyphens (`--`) to separate folder names from the file name.
+- A prefix (e.g., `app`) is added to the beginning of each custom element name.
+
+#### Examples
+
+| Filepath                            | Generated Custom Element Name |
+|-------------------------------------|--------------------------------|
+| `custom_elements/demo_element.js`   | `<app-demo>`                  |
+| `custom_elements/demo-element.js`   | `<app-demo>`                  |
+| `custom_elements/foo_bar_element.js`| `<app-foo-bar>`               |
+| `custom_elements/folder/foo_bar_element.js` | `<app-folder--foo-bar>` |
 
 ## Add a custom element with the built-in generator
 
