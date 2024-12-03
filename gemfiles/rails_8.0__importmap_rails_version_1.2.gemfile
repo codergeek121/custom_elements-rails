@@ -2,13 +2,13 @@
 
 source "https://rubygems.org"
 
-gem "importmap-rails", "~> 2.0"
+gem "importmap-rails", "~> 1.2"
 gem "propshaft"
 gem "puma"
 gem "debug", ">= 1.0.0"
 gem "capybara"
 gem "selenium-webdriver"
-gem "rails", "~> 7.0"
-gem "sqlite3", "~> 1.4"
+gem "rails", "~> 7.1"
+gem "sqlite3", ">= 2.1"
 
 gemspec path: "../"
