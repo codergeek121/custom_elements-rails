@@ -7,7 +7,6 @@ gemspec
 gem "importmap-rails"
 gem "propshaft"
 gem "puma"
-gem "sqlite3", "~> 1.4"
 gem "debug", ">= 1.0.0"
 gem "capybara"
 gem "selenium-webdriver"
