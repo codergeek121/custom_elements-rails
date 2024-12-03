@@ -4,7 +4,7 @@ export function eagerDefineCustomElementsFrom(namespace, options = {}) {
   const regex = new RegExp(`${namespace}\/(.*?)_element`)
   Object.entries(imports)
     .filter(([name, _]) => name.match(regex) )
-    .map(([name, importPath]) => [name.match(regex)[1], importPath])
+    .map(([name, importPath]) => [name.match(regex)[1].replace('_', '-'), importPath])
     .forEach(([name, importPath]) => {
       import(importPath)
         .then((module) => {
