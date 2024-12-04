@@ -4,6 +4,9 @@
 
 This gem adds a simple way to automatically register custom elements in your `importmap-rails` app. No build step required!
 
+- Supports `importmap-rails` v1 and v2.
+- Supports `rails` 7.0, 7.1 & 8.0.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -34,20 +37,22 @@ app/javascript
     └── index.js
 ```
 
-The `<app-hello>` custom element can be used in the views now.
+The `<app-hello>` custom element can be used in views now.
 
-You can generate a new custom element with `rails g custom_element abc`.
+You can generate a new custom element `<app-demo>` with `rails generate custom_element demo`.
 
-## How it works
+### How It Works
 
-The setup will add a JS function call `eagerDefineCustomElementsFrom` that parses the importmap rendered by the `importmap-rails` gem.
-It registers custom elements with `customElements.define(...)` in the browser's registry based on the filenames in the `custom_elements` folder automatically.
+The `custom_elements-rails` gem uses `eagerDefineCustomElementsFrom` to automatically register [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) from the `custom_elements` folder. It reads the importmap from `importmap-rails` and registers elements using `customElements.define(...)`.
+
+For example:
 
 ```
-custom_elements/hello_element.js // will register <app-hello> automatically
+custom_elements/hello_element.js // Automatically registers <app-hello>
 ```
 
-Your `*_element.js` files have to `export default` custom elements for this to work properly.
+> [!IMPORTANT]  
+> Make sure your `*_element.js` files use `export default` to define the custom elements.
 
 ### Naming Convention for Custom Elements
 
@@ -55,20 +60,11 @@ When defining custom elements from files, their filenames are used to generate t
 
 #### Usage
 
-Register all files in the `custom_elements` folder as custom elements using a prefix (e.g., `app`):
+Register all files in the `custom_elements` folder as custom elements:
 
 ```js
 eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
 ```
-
-#### Conversion Rules
-
-- Filenames are transformed into kebab-case (lowercase with hyphens).
-- Words are separated by underscores (`_`) or hyphens (`-`) in the filename.
-- The folder structure is reflected in the name using double hyphens (`--`) to separate folder names from the file name.
-- A prefix (e.g., `app`) is added to the beginning of each custom element name.
-
-#### Examples
 
 | Filepath                            | Generated Custom Element Name |
 |-------------------------------------|--------------------------------|
@@ -76,6 +72,12 @@ eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
 | `custom_elements/demo-element.js`   | `<app-demo>`                  |
 | `custom_elements/foo_bar_element.js`| `<app-foo-bar>`               |
 | `custom_elements/folder/foo_bar_element.js` | `<app-folder--foo-bar>` |
+
+#### Conversion Rules
+
+- Filenames are transformed into kebab-case (lowercase with hyphens).
+- The folder structure is reflected in the name using double hyphens (`--`) to separate folder names from the file name.
+- A [configurable prefix](#documentation) is added to the beginning of each custom element name.
 
 ## Add a custom element with the built-in generator
 
@@ -136,9 +138,9 @@ export default class extends HTMLElement {
 
 `eagerDefineCustomElementsFrom(under, options)`
 
-Currently supported `options`:
+Currently supported optional `options`:
 
-* `prefix`: The custom elements namespace/prefix.
+* `prefix`: The custom elements namespace. (default: "app")
 
 ## Contributing
 
