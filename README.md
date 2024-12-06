@@ -33,13 +33,13 @@ gem "custom_elements-rails"
 
 Install the gem:
 
-```bash
+```console
 $ bundle install
 ```
 
 Run the initial setup:
 
-```bash
+```console
 $ rails custom_elements:install
 ```
 
@@ -93,7 +93,7 @@ eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
 
 This gem adds a generator to generate new custom elements with:
 
-```bash
+```console
 $ rails generate custom_element test 
 ```
 
@@ -114,13 +114,13 @@ export default class extends HTMLElement {
 
 which in turn will register a `<app-test></app-test>` custom element automatically in your app.
 
-```bash
+```console
 $ rails generate custom_element test 
 ```
 
 To observe changes in your custom element's attributes, you need to set a static array of attribute names. The generator also supports setting those automatically:
 
-```bash
+```console
 $ rails generate custom_element test attribute1
 ```
 
