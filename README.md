@@ -1,6 +1,8 @@
 # Custom Elements Rails
 
-[![Tests](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml)
+[![Rails 8.0](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml)
+[![Rails 7.2](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml)
+[![Rails 7.1](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/codergeek121/custom_elements-rails/actions/workflows/ruby.yml)
 
 This gem adds a simple way to automatically register custom elements in your `importmap-rails` app. No build step required!
 
