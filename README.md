@@ -76,12 +76,12 @@ Register all files in the `custom_elements` folder as custom elements:
 eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
 ```
 
-| Filepath                            | Generated Custom Element Name |
-|:-----------------------------------:|:------------------------------:|
-| `custom_elements/demo_element.js`   | `<app-demo>`                  |
-| `custom_elements/demo-element.js`   | `<app-demo>`                  |
-| `custom_elements/foo_bar_element.js`| `<app-foo-bar>`               |
-| `custom_elements/folder/foo_bar_element.js` | `<app-folder--foo-bar>` |
+| Filepath                                    | Generated Custom Element Name |
+|:-------------------------------------------:|:-----------------------------:|
+| `custom_elements/demo_element.js`           | `<app-demo>`                  |
+| `custom_elements/demo-element.js`           | `<app-demo>`                  |
+| `custom_elements/foo_bar_element.js`        | `<app-foo-bar>`               |
+| `custom_elements/folder/foo_bar_element.js` | `<app-folder--foo-bar>`       |
 
 #### Conversion Rules
 
