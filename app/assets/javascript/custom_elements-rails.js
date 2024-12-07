@@ -1,4 +1,9 @@
 export function eagerDefineCustomElementsFrom(namespace, options = {}) {
+  const defaultOptions = {
+    prefix: 'app'
+  }
+
+  options = { ...defaultOptions, ...options }
   const pathToElementName = (path) => {
     const parts = path.split('/').map(p => p.replace(/_/g, '-'));
     return `${options.prefix}-${parts.slice(0, -1).join('--')}${parts.length > 1 ? '--' : ''}${parts.at(-1)}`;

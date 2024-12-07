@@ -1,3 +1,3 @@
 import { eagerDefineCustomElementsFrom } from "custom_elements-rails"
 
-eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" })
+eagerDefineCustomElementsFrom("custom_elements")
