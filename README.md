@@ -79,7 +79,7 @@ eagerDefineCustomElementsFrom("custom_elements", { prefix: "app" });
 ```
 
 | Filepath                                    | Generated Custom Element Name |
-|:-------------------------------------------:|:-----------------------------:|
+|--------------------------------------------:|:------------------------------|
 | `custom_elements/demo_element.js`           | `<app-demo>`                  |
 | `custom_elements/demo-element.js`           | `<app-demo>`                  |
 | `custom_elements/foo_bar_element.js`        | `<app-foo-bar>`               |
