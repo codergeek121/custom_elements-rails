@@ -7,10 +7,9 @@ module CustomElements
         end
       end
 
-      initializer "custom_elements-rails.spark", after: "hotwire_spark.config" do |app|
+      initializer "custom_elements-rails.configure_spark", after: "hotwire_spark.config" do |app|
         spark_available = app.config.respond_to?(:hotwire) && app.config.hotwire.respond_to?(:spark)
         if spark_available
-          puts "spark_available"
           # Custom elements don't seem to work with morphing
           Hotwire::Spark.html_reload_method = :replace
 
